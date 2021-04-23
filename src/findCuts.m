@@ -1,7 +1,12 @@
-function [rows, cols, n_cuts_response] = findCuts(list_frames, D, M, n_frames, n_cuts_request)
+function [rows, cols, n_cuts_response] = findCuts(list_frames, D, M, n_frames, n_jump_options)
 
+D(M < n_jump_options, :) = Inf;
+M(M < n_jump_options) = 0;
+n_cuts_request = sum(M(:));
 
+% n_cuts_request = sum(M >= n_jump_options);
 [min_costs, indices] = mink(D(:), n_cuts_request);
+% [min_costs, indices] = min(D(:));
 
 n_cuts_response = length(indices);
 

@@ -5,9 +5,10 @@ D = padarray(D, [1 1], Inf);
 
 TF = zeros(size(D));
 
-for i = 1 : n_frames+2
-    TF(i,:) = islocalmin(D(i,:));
-end
+TF = islocalmin(D);
+% for i = 1 : n_frames+2
+%     TF(i,:) = islocalmin(D(i,:));
+% end
 
 D = D .* TF;
 

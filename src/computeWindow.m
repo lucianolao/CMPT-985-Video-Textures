@@ -15,11 +15,11 @@ window(window_size) = 1;
 % end
 window(1:window_size) = 1;
 
-% window(1) = 4;
+% window(1) = 1;
 % window(2) = 2;
-% window(3) = 1;
+% window(3) = 16;
 % window(4) = 2;
-% window(5) = 4;
+% window(5) = 1;
 
 % normalize weights tom sum to 1
 window = window ./ sum(window);

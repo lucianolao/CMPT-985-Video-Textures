@@ -10,13 +10,14 @@ D(:,:) = NaN; % Inf or 0
 
 % compute distances
 for i = 1 : n_frames
-    im1 = video(i).img;
-    im1 = rgb2gray(im1);
-    im1 = imgaussfilt(im1,2);
+    fprintf('Computing distances %d/%d\n', i, n_frames);
+    im1 = video(i).gray_blur;
+    %im1 = rgb2gray(im1);
+    %im1 = imgaussfilt(im1,2);
     for j = (i+1) : n_frames
-        im2 = video(j).img;
-        im2 = rgb2gray(im2);
-        im2 = imgaussfilt(im2,2);
+        im2 = video(j).gray_blur;
+        %im2 = rgb2gray(im2);
+        %im2 = imgaussfilt(im2,2);
         % L2 distance
         I = (im1 - im2) .^ 2;
         %I = sum(I(:));

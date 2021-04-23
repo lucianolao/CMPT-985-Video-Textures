@@ -4,7 +4,7 @@ close all
 
 %%%%%%%%%% PARAMETERS %%%%%%%%%%
 
-filename = "clock";
+filename = "hamster";
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
